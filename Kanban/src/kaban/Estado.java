@@ -1,6 +1,8 @@
 package kaban;
 
-public enum Estado {
+public enum Estado 
+{
+	BACKLOG,
 	DO_TO,
 	IN_PROGRESS,
 	DONE

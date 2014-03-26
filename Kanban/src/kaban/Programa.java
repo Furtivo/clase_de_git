@@ -2,15 +2,17 @@ package kaban;
 
 public class Programa {
 
-	public static void main(String[] args) 
+	public static void main(String[] args) throws Exception 
 	{
-		Tarea tarea = new Tarea();
-		tarea.setDescripcion("Completar el programa");
-		tarea.setEstado(Estado.DO_TO);
-		IDashboard lista= new ListaDeTareas();
-		if (lista.agregar(tarea))
+		Tarea tarea;
+		IDashboard dashboard = new DashboardList();
+		for (int i = 0; i < 15; i++) 
 		{
-			System.out.println("Agregada");
+			tarea = new Tarea("Tarea " + i, Estado.DO_TO);
+			if (dashboard.agregar(tarea)) 
+			{
+				System.out.println("Agregada " + tarea.getTitulo());
+			}
 		}
 	}
 
