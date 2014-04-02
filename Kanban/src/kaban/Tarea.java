@@ -7,6 +7,7 @@ public class Tarea
 	private String descripcion;
 	private Estado estado;
 	private String categoria;
+	private short priority;
 	private int prioridad;
 	private String Propietario;
 	private Date fechaDeEntrega;
@@ -14,22 +15,27 @@ public class Tarea
 	
 	public Tarea()
 	{
-		super();
-		this.Titulo="";
+		this("");
 		System.out.println("starting Task() ctor...");
 	}
 	public Tarea(String titulo) {
-		this(titulo, Estado.BACKLOG);
+		this(titulo, Estado.BACKLOG, (short) 1);
 		System.out.println("starting Task(String) ctor...");
 	}
-
-	public Tarea(String title, Estado state) {
+	public Tarea(String titulo, short priority){
+		this(titulo, Estado.BACKLOG, priority);
+		System.out.println("starting Task(String, Priority)ctor...");
+	}
+	public Tarea(String titulo, Estado estado){
+        this(titulo, estado, (short)1);		
+        System.out.println("starting Task(String Estado)ctor...");
+	}
+	public Tarea(String title, Estado state, short priority) {
 		super();
 		System.out.println("starting Task(String, State) ctor...");
-		
 		this.Titulo = title;
 		fechaDeCreacion = new Date();
-		prioridad = 1;
+		this.prioridad= priority;
 		this.estado = state;
 	}
 
@@ -59,7 +65,14 @@ public class Tarea
 		return categoria;
 	}
 	public void setCategoria(String categoria) {
-		this.categoria = categoria.toUpperCase().trim();
+		this.categoria = categoria.toUpperCase().trim();	
+	}
+	public short getPriority() {
+		return priority;
+	}
+
+	public void setPriority(short priority) {
+		this.priority = priority;
 	}
 	public int getPrioridad() {
 		return prioridad;

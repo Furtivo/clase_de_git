@@ -8,14 +8,13 @@ public class Programa {
 	public static void main(String[] args) throws Exception 
 	{
 		System.out.println("Start" + new Date());
-		Tarea tarea;
+		Usuario user;
 		for (int i = 0; i < 15; i++) 
 		{
-			tarea = new Tarea("Tarea " + i, Estado.DO_TO);
-			if (tarea.save()) 
-			{
-				System.out.println("Agregada " + tarea.getTitulo());
-			}
+			user = new Usuario();
+			user.setName("Titulo " + i);
+			//user.setPriority((int)i/2);
+			user.start();
 		}
 		System.out.println("End" + new Date());
 	}
