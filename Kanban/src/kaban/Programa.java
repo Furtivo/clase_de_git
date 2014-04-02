@@ -13,7 +13,8 @@ public class Programa {
 		{
 			user = new Usuario();
 			user.setName("Titulo " + i);
-			//user.setPriority((int)i/2);
+			int priority = 1 +(int) (Math.random()*((10-1)+1));
+			user.setPriority(priority);
 			user.start();
 		}
 		System.out.println("End" + new Date());
