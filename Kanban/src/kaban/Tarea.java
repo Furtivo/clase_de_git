@@ -3,6 +3,7 @@ package kaban;
 import java.util.Date;
 public class Tarea 
 {
+
 	private String Titulo;
 	private String descripcion;
 	private Estado estado;
@@ -116,7 +117,7 @@ public class Tarea
 		return true;
 	}
 	public boolean save(){
-		 synchronized (this);{
+		 synchronized (this){
 		try{
 			Thread.sleep(1*1000);
 		} catch (InterruptedException e){
