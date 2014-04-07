@@ -112,12 +112,17 @@ public class Tarea
 		}
 		return false;
 	}
+	public synchronized boolean remove(){
+		return true;
+	}
 	public boolean save(){
+		 synchronized (this);{
 		try{
 			Thread.sleep(1*1000);
 		} catch (InterruptedException e){
 			e.printStackTrace();
 		}
 		return true;
+		}
 	}
 }
